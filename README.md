@@ -83,3 +83,19 @@ Softmax
     |
     v
 4 Classes
+
+##Dataset Structure
+
+alzheimer_dataset/
+│
+├── train/
+│   ├── No Impairment/
+│   ├── Very Mild Impairment/
+│   ├── Mild Impairment/
+│   └── Moderate Impairment/
+│
+└── test/
+    ├── No Impairment/
+    ├── Very Mild Impairment/
+    ├── Mild Impairment/
+    └── Moderate Impairment/
