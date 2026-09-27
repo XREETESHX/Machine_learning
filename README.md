@@ -83,6 +83,7 @@ Softmax
     |
     v
 4 Classes
+```
 
 ##Dataset Structure
 
