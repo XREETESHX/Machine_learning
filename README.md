@@ -23,36 +23,62 @@ The project uses:
 - Dropout
 - Softmax Classification
 
-### Architecture
+## Model Architecture
+
+The proposed model uses a ResNet50-based Convolutional Neural Network with transfer learning.
 
 ```text
-MRI Image
-    |
-    v
-Data Augmentation
-    |
-    v
-ResNet50
-    |
-    v
-Global Average Pooling
-    |
-    v
-Batch Normalization
-    |
-    v
-Dropout
-    |
-    v
-Dense Layer (256)
-    |
-    v
-Batch Normalization
-    |
-    v
-Dropout
-    |
-    v
+Input MRI Image (224 × 224 × 3)
+                |
+                v
+        Data Augmentation
+     Flip | Rotation | Zoom
+                |
+                v
+          Normalization
+             1 / 255
+                |
+                v
+        +----------------+
+        |    ResNet50    |
+        | ImageNet       |
+        | Pretrained     |
+        +----------------+
+                |
+        Fine-Tune Last 10
+             Layers
+                |
+                v
+   Global Average Pooling
+                |
+                v
+     Batch Normalization
+                |
+                v
+         Dropout (0.4)
+                |
+                v
+       Dense Layer (256)
+        ReLU Activation
+                |
+                v
+     Batch Normalization
+                |
+                v
+         Dropout (0.4)
+                |
+                v
+       Dense Layer (4)
+       Softmax Activation
+                |
+                v
+        Classification
+                |
+       +--------+--------+
+       |        |        |
+       v        v        v
+      No      Very      Mild/
+   Impairment  Mild    Moderate
 Softmax
     |
     v
