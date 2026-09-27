@@ -86,7 +86,7 @@ Softmax
 ```
 
 ##Dataset Structure
-
+```text
 alzheimer_dataset/
 │
 ├── train/
@@ -100,3 +100,4 @@ alzheimer_dataset/
     ├── Very Mild Impairment/
     ├── Mild Impairment/
     └── Moderate Impairment/
+```
