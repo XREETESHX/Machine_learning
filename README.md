@@ -85,7 +85,7 @@ Softmax
 4 Classes
 ```
 
-##Dataset Structure
+## Dataset Structure
 ```text
 alzheimer_dataset/
 │
